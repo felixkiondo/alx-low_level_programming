@@ -1,14 +1,15 @@
 #include <stdio.h>
 /**
  * main - Entry point
- * Description: 'print lowercase in reverse'
+ * Description: 'print lowecase in reverse'
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int n = 122;
+	int n = 97;
+
 	{
-		while (n >= 97)
+		while (n <= 122)
 			putchar(n);
 			n--;
 	}
