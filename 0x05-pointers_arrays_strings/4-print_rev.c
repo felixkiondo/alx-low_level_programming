@@ -1,11 +1,24 @@
 #include "main.h"
+
 /**
- * reset_to_98 - a function that takes a pointer to an int as parameter
- * and updates the value it points to to 98
- * @n: input
- * Return: n
+ * rev_string - Reverses a string
+ * @s: Input string
+ * Return: String in reverse
  */
-void reset_to_98(int *n)
+
+void rev_string(char *s)
 {
-	*n = 98;
+	char rev = s[0];
+	int counter = 0;
+	int i;
+
+	while (s[counter] != '\0')
+	counter++;
+	for (i = 0; i < counter; i++)
+	{
+		counter--;
+		rev = s[i];
+		s[i] = s[counter];
+		s[counter] = rev;
+	}
 }
