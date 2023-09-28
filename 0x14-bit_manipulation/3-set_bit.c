@@ -5,15 +5,11 @@
  * @n: number to set bit value to 1
  * @index: bit index
  *
- * Return: 1 if correct
+ * Return: (1) if successful (-1) if unsuccessful
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	int a;
-
-	a = sizeof(unsigned long int) * 8 - 1;
-
-	if (index > a)
+	if (index > 63)
 		return (-1);
 
 	*n = *n | (1UL << index);
