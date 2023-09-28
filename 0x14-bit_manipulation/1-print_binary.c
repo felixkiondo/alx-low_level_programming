@@ -2,25 +2,25 @@
 
 /**
  * print_binary - prints the binary equivalent of a decimal number
- * @n: number to be converted and printed in binary
+ * @n: number to print in binary
  */
 void print_binary(unsigned long int n)
 {
-	int i, j = 0;
-	unsigned long int current_num;
+	int i, count = 0;
+	unsigned long int current;
 
-	for (i = 63; i >= 63; i--)
+	for (i = 63; i >= 0; i--)
 	{
-		current_num = n >> i;
+		current = n >> i;
 
-		if (current_num & 1)
+		if (current & 1)
 		{
 			_putchar('1');
-			j++;
+			count++;
 		}
-		else if (j)
+		else if (count)
 			_putchar('0');
 	}
-	if (!j)
+	if (!count)
 		_putchar('0');
 }
