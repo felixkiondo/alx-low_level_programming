@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - prints all possible different combinations of three digits
+ * main - prints all possible different combinations of two digits
  * Return: ALways 0 (Success)
  */
 int main(void)
@@ -12,7 +12,7 @@ int main(void)
 	{
 		for (j = i + 1; j <= 57; j++)
 		{
-			for (k = i + 2; k <= 57; k++)
+			for (k = j + 1; k <= 57; k++)
 			{
 				putchar(i);
 				putchar(j);
