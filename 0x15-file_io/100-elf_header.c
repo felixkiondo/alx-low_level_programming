@@ -50,6 +50,7 @@ int is_elf(Elf64_Ehdr *header)
 int main(int c, char **v)
 {
 	int f;
+	Elf64_Ehdr header;
 
 	if (c != 2)
 	{
@@ -62,8 +63,6 @@ int main(int c, char **v)
 		perror("Error opening file");
 		return (98);
 	}
-	Elf64_Ehdr header;
-
 	if (read(f, &header, sizeof(header)) != sizeof(header))
 	{
 		perror("Error reading ELF header");
