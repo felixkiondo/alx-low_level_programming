@@ -63,24 +63,25 @@ int main(int c, char **v)
 	if (f == -1)
 	{
 		perror("Error opening file");
-		fprintf(stderr, "Filename: %s\n", v[1]);
+		fprintf(stderr, "Filename: %s\n", v[i]);
 		return (98);
 	}
 
 	if (read(f, &header, sizeof(header)) != sizeof(header))
 	{
 		perror("Error reading ELF header");
-		fprintf(stderr, "Filename: %s\n", v[1]);
+		fprintf(stderr, "Filename: %s\n", v[i]);
 		close(f);
 		return (98);
 	}
 
 	if (is_elf(&header))
 	{
-		fprintf(stderr, "Not an ELF file: %s\n", v[1]);
+		fprintf(stderr, "Not an ELF file: %s\n", v[i]);
 		close(f);
 		return (98);
 	}
+
 	print_elf(&header);
 	if (close(f) == -1)
 	{
