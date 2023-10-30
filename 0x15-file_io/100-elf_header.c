@@ -1,3 +1,4 @@
+
 #include "main.h"
 
 /**
@@ -66,10 +67,12 @@ int main(int c, char **v)
 	if (read(f, &header, sizeof(header)) != sizeof(header))
 	{
 		perror("Error reading ELF header");
+		close(f);
 		return (98);
 	}
 	if (is_elf(&header))
 	{
+		close(f);
 		return (98);
 	}
 	print_elf(&header);
